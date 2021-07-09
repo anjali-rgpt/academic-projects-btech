@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="FirstName" >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Z][a-z]+"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="LastName" >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Z][a-z]+"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="Phone">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:length value="10"/>
+<xs:pattern value="[7|8|9]([0-9]{9})"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="TableNum">
+<xs:simpleType>
+<xs:restriction base="xs:decimal">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="25"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="BookDate">
+<xs:simpleType>
+<xs:restriction base="xs:date">
+<xs:minInclusive value="2020-10-16"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="BookTime">
+<xs:simpleType>
+<xs:restriction base="xs:time">
+<xs:minInclusive value="09:00:00"/>
+<xs:maxInclusive value="22:00:00"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="itemname">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Za-z]+([\sA-Za-z0-9])*"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="itemprice">
+<xs:simpleType>
+<xs:restriction base="xs:decimal">
+<xs:minInclusive value="10"/>
+<xs:maxInclusive value="1500"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="itemtype">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="(Starter)|(Main)|(Dessert)|(Side)|(Drink)"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+
+<xs:element name="item">
+<xs:complexType>
+<xs:sequence>
+<xs:element ref="itemname"/>
+<xs:element ref="itemprice"/>
+<xs:element ref="itemtype"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="Menu">
+<xs:complexType>
+<xs:sequence>
+<xs:element ref="item" minOccurs="1" maxOccurs="5"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+
+<xs:element name="Invitee">
+<xs:complexType>
+<xs:sequence>
+<xs:element ref="FirstName"/>
+<xs:element ref="LastName"/>
+<xs:element ref="Phone"/>
+<xs:element ref="Menu"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="customer">
+<xs:complexType>
+<xs:sequence>
+<xs:element ref="FirstName"/>
+<xs:element ref="LastName"/>
+<xs:element ref="Phone"/>
+<xs:element ref="TableNum"/>
+<xs:element ref="BookDate"/>
+<xs:element ref="BookTime"/>
+<xs:element ref="Menu"/>
+<xs:element ref="Invitee" minOccurs="0" maxOccurs="5"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="hotel">
+<xs:complexType>
+<xs:sequence>
+<xs:element ref="customer" minOccurs="1" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:schema>

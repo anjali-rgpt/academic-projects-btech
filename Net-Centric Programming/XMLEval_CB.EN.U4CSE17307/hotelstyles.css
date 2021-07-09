@@ -1,0 +1,41 @@
+customer{
+    display:block;
+    
+}
+customer>FirstName,customer>LastName,customer>Phone{
+    display:inline;
+    margin:1em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:16pt;
+    color:red;
+    background-color: aquamarine;
+}
+TableNum,BookDate,BookTime, customer>Menu{
+    display:block;
+    margin:1em;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:16pt;
+    background-color: aquamarine;
+}
+
+Menu{
+    display:table;
+}
+
+item{
+    display:table-row;
+    margin:1em;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:16pt;
+}
+
+itemname,itemprice,itemtype{
+    display:table-cell;
+    padding: 1em;
+}
+
+Invitee{
+    display:block;
+    border:1px solid black;
+    background-color: burlywood;
+}

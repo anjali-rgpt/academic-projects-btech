@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Tables</title>
+    <style>
+        .main {
+            border-color: blueviolet;
+            border-style: solid;
+            border-width: 4pt;
+            text-align: center;
+            
+        }
+
+        .main td {
+            border-style: solid;
+            border-color: blueviolet;
+            border-width:1pt;
+        }
+
+        .nested td {
+            border-style: solid;
+            border-color: red;
+            border-width: 1pt;
+        }
+
+        .nested {
+            border-color: red;
+            border-style: solid;
+            border-width: 4pt;
+           
+        }
+
+        
+       
+    </style>
+</head>
+
+<body>
+    <table class="main" cellpadding="2em">
+        <tr>
+            <td rowspan="2">Left side of the main table</td>
+            <td>
+                <b>Nested Table</b>
+
+                <table class="nested">
+                    <tr>
+                        <td>nested table C1</td>
+                        <td>nested table C2</td>
+                    </tr>
+                    <tr>
+                        <td>nested table </td>
+                        <td>nested table</td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

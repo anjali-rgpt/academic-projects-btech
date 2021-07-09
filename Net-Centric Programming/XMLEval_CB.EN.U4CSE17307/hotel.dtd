@@ -1,0 +1,14 @@
+<!ELEMENT hotel (customer+)>
+<!ELEMENT customer (FirstName,LastName,Phone,TableNum,BookDate,BookTime,Menu,Invitee*)>
+<!ELEMENT FirstName (#PCDATA)> 
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT TableNum (#PCDATA)>
+<!ELEMENT BookDate (#PCDATA)>
+<!ELEMENT BookTime (#PCDATA)>
+<!ELEMENT Menu (item+)>
+<!ELEMENT item (itemname,itemprice,itemtype)>
+<!ELEMENT itemname (#PCDATA)>
+<!ELEMENT itemprice (#PCDATA)>
+<!ELEMENT itemtype (#PCDATA)>
+<!ELEMENT Invitee (FirstName,LastName,Phone,Menu)>

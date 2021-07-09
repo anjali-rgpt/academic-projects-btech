@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form example</title>
+    <style>
+        form {
+            max-width:40%;
+            border-width: 2pt;
+            border-style:solid;
+            border-color: black;
+        }
+
+        .cols {
+            overflow: hidden;
+        }
+
+        .col1 {
+            float: left;
+        }
+
+        .col2,
+        .rightfloat {
+            float: right;
+        }
+
+        body {
+            font-family: sans-serif;
+
+        }
+
+        #submit{
+            float:right;
+            border-radius:5px;
+        }
+
+        fieldset{
+            border-radius:20px;
+            border-color: blue;
+            margin:2em;
+        }
+
+        div{
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="http://www.google.co.in">
+        <fieldset>
+            <legend>Personal Data</legend>
+            <div>
+                <label>Last Name:*</label>
+                <br />
+                <input type="text" name="lastname" required>
+            </div>
+            <div class="cols">
+                <div class="col1">
+                    <label>First Name:*</label>
+                    <br />
+                    <input type="text" name="firstname" required>
+                </div>
+                <div class="col2">
+                    <label class="rightfloat">Middle Name:</label>
+                    <br />
+                    <input type="text" name="midname">
+                </div>
+            </div>
+
+            <div>
+                <label>Email:*</label><br />
+                <input type="email" name="email">
+            </div>
+
+            <div>
+                <label>Resume:*</label><br />
+                <textarea name="Resume"></textarea>
+            </div>
+        </fieldset>
+        <fieldset name="job">
+            <legend>Job</legend>
+            <div class="cols">
+                <div class="col1">
+                    <label>Position applied for:</label><br/>
+                    <select name="position">
+                        <option value="Administration" selected="selected">Administration</option>
+                        <option value="HR">HR</option>
+                        <option value="Research Scientist">Research Scientist</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="col2">
+                    <label  class="rightfloat">Hourly Wage:*</label><br/>
+                    <input type="number" name="wage" required>
+                </div>
+            </div>
+            
+            <div class="cols">
+                <div class="col1">
+                    <label>Date you can start:</label><br/>
+                    <input type="date" name="datestart">
+                </div>
+
+                <div class="col2">
+                    <label  class="rightfloat">Weekly Hours:*</label><br/>
+                    <input type="number" name="weekhours" required>
+                </div>
+            </div>
+
+        </fieldset>
+        <div>
+        <input type="submit" id="submit">
+    </div>
+<br/>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="hotel.xsl"?>
+<!--<?xml-stylesheet type="text/css" href="hotelstyles.css"?>-->
+
+<!DOCTYPE hotel SYSTEM "hotel.dtd">
+<hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hotel.xsd">
+    <customer>
+        <FirstName>Sara</FirstName>
+        <LastName>Jones</LastName>
+        <Phone>7777777777</Phone>
+        <TableNum>10</TableNum>
+        <BookDate>2020-12-12</BookDate>
+        <BookTime>09:30:00</BookTime>
+        <Menu>
+                <item>
+                <itemname>Mashed Potato</itemname>
+                <itemprice>300</itemprice>
+                <itemtype>Starter</itemtype>
+                </item>
+
+        </Menu>
+        <Invitee>
+            <FirstName>John</FirstName>
+            <LastName>Smith</LastName>
+            <Phone>9999999999</Phone>
+            <Menu>
+                <item>
+                <itemname>Chicken Biryani</itemname>
+                <itemprice>500</itemprice>
+                <itemtype>Main</itemtype>
+                </item>
+
+                <item>
+                <itemname>Mango juice</itemname>
+                <itemprice>50</itemprice>
+                <itemtype>Drink</itemtype>
+                </item>
+
+                <item>
+                <itemname>Chilli Gobi</itemname>
+                <itemprice>250</itemprice>
+                <itemtype>Starter</itemtype>
+                </item>
+
+            </Menu>
+        </Invitee>
+        <Invitee>
+            <FirstName>Anna</FirstName>
+            <LastName>Parker</LastName>
+            <Phone>9454545459</Phone>
+            <Menu>
+                <item>
+                <itemname>Rasgulla</itemname>
+                <itemprice>150</itemprice>
+                <itemtype>Dessert</itemtype>
+                </item>
+
+                <item>
+                <itemname>Water</itemname>
+                <itemprice>10</itemprice>
+                <itemtype>Drink</itemtype>
+                </item>
+
+                <item>
+                <itemname>Spicy Noodles</itemname>
+                <itemprice>450</itemprice>
+                <itemtype>Main</itemtype>
+                </item>
+
+            </Menu>
+        </Invitee>
+    </customer>
+    <customer>
+        <FirstName>Gandalf</FirstName>
+        <LastName>Grey</LastName>
+        <Phone>8888888880</Phone>
+        <TableNum>1</TableNum>
+        <BookDate>2020-11-10</BookDate>
+        <BookTime>13:30:00</BookTime>
+        <Menu>
+            <item>
+                <itemname>Chilli Gobi</itemname>
+                <itemprice>250</itemprice>
+                <itemtype>Starter</itemtype>
+            </item>
+
+        </Menu>
+        <Invitee>
+            <FirstName>Cassandra</FirstName>
+            <LastName>Clare</LastName>
+            <Phone>9895027272</Phone>
+            <Menu>
+                <item>
+                <itemname>Fries</itemname>
+                <itemprice>100</itemprice>
+                <itemtype>Starter</itemtype>
+                </item>
+
+            </Menu>
+        </Invitee>
+        <Invitee>
+            <FirstName>Amish</FirstName>
+            <LastName>Tripathi</LastName>
+            <Phone>9191919191</Phone>
+            <Menu>
+                <item>
+                <itemname>Chocolate cake</itemname>
+                <itemprice>300</itemprice>
+                <itemtype>Dessert</itemtype>
+                </item>
+
+                <item>
+                <itemname>Water</itemname>
+                <itemprice>10</itemprice>
+                <itemtype>Drink</itemtype>
+                </item>
+            </Menu>
+        </Invitee>
+    </customer>
+    <customer>
+        <FirstName>Myra</FirstName>
+        <LastName>Xavier</LastName>
+        <Phone>8833445566</Phone>
+        <TableNum>6</TableNum>
+        <BookDate>2020-11-10</BookDate>
+        <BookTime>09:30:00</BookTime>
+        <Menu>
+            <item>
+                <itemname>Chilli Paneer</itemname>
+                <itemprice>250</itemprice>
+                <itemtype>Starter</itemtype>
+            </item>
+        </Menu>
+    </customer>
+</hotel>

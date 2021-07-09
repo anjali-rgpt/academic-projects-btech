@@ -1,0 +1,20 @@
+INDEX VERSION 1.127+D:\4th Year\NCP\ncp-xml\XMLEval\ExcelCode\.metadata\.plugins\org.eclipse.jdt.core
+948249296.index
+320808807.index
+1456626445.index
+444446819.index
+516634602.index
+1761383288.index
+3130257825.index
+3886353919.index
+1542908775.index
+3129538801.index
+2692862777.index
+2081366530.index
+201245699.index
+2138547520.index
+693450176.index
+1119338726.index
+908930545.index
+3423317322.index
+3184604798.index

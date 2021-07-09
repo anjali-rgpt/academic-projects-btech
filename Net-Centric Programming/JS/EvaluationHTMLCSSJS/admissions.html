@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions Form</title>
+
+    <script>
+        function clientside() {
+            firstName = document.getElementById('fname').value;
+            lastName = document.getElementById('lname').value;
+            middleName = document.getElementById('mname').value;
+            console.log(firstName, middleName, lastName);
+
+            alphabetRegex = /^[A-Z][a-z]+$/
+            alphanumericRegex = /^[A-Za-z0-9]+$/
+            numericRegex = /^[0-9]+$/
+            spaceRegex = /^\s+$/
+
+            if (alphabetRegex.test(firstName) && (alphabetRegex).test(lastName)) {
+                if (middleName.length != 0) {
+                    console.log('Here', middleName.length);
+                    if (!(alphabetRegex.test(middleName))) {
+                        return "Invalid middle name";
+
+                    }
+                }
+            } else {
+                return "Invalid first or last name";
+            }
+
+            userName = document.getElementById('uname').value;
+            if (!(alphanumericRegex.test(userName))) {
+                return "Invalid username";
+            }
+
+            phones={'AR':10,'AU':9,'BD':10,'BE':9,'CA':10,'FR':9,'DE':10,'IN':10,'JP':11,'MY':7,'OM':10,'RU':10,'GB':10,'UA':9,'US':10}
+            p=document.getElementById('countrycode');
+            phoneCode=p.options[p.selectedIndex].value;
+            phoneNum=document.getElementById('phonenum').value;
+            if (phoneNum.length!=phones[phoneCode]){
+                console.log(phoneCode,phoneNum, phoneNum.length)
+                return"Invalid phone-code match";
+         }
+            console.log('Here');
+            return 1;
+
+        }
+
+        function validate(event) {
+            checker = clientside();
+            if (checker != 1) {
+                alert('Error:' + checker);
+                return false;
+                checker = clientside()
+            } else {
+
+                marks1 = document.getElementById('subject1').value;
+                marks2 = document.getElementById('subject2').value;
+                marks3 = document.getElementById('subject3').value;
+                console.log(marks1, marks2, marks3);
+
+                marks = [parseFloat(marks1), parseFloat(marks2), parseFloat(marks3)];
+
+                for (index = 0; index < marks.length; index++) {
+                    if (marks[index] < 50) {
+                        
+                        return false;
+                    }
+                }
+
+                curDate = Date.now();
+                dob = document.getElementById('dob').value;
+                datebirth=dob.split('-')
+                console.log(dob);
+                newdate=new Date(datebirth[0],datebirth[1],datebirth[2])
+                age=((curDate - newdate) / (31557600000))
+                
+                if (age<=23 && age>=17){
+                    alert("Eligible");
+                    return true;
+                    
+                }
+
+            }
+        }
+
+        function check(){
+            if (validate()){
+                document.forms['admissionform'].submit();
+            }
+
+            else{
+                alert('Ineligible');
+               event.preventDefault();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <h3>Select your admission type<span>*</span></h3>
+        <label for="engineering">Engineering</label>
+        <input type="radio" name="stream" id="engineering" value="engineering" checked required
+            onchange="subjectChange(this)" />
+
+        <label for="medical">Medical</label>
+        <input type="radio" name="stream" id="medical" value="medical" onchange="subjectChange(this)"/>
+    </div>
+    <div class="row">
+        <form method="POST" action="submission.html" name="admissionform" id="admissionform" onsubmit="check(event)">
+            <h1>Admission Form</h1>
+
+            <fieldset class="fields">
+                <legend>Personal Details</legend>
+
+                <section id="name" class="row">
+                    <div class="col">
+                        <label for="fname">First Name<span>*</span></label><br />
+                        <input type="text" name="fname" id="fname" required />
+                    </div>
+                    <div class="col">
+                        <label for="mname">Middle Name</label><br />
+                        <input type="text" name="mname" id="mname" />
+                    </div>
+                    <div class="col">
+                        <label for="lname">Last Name<span>*</span></label><br />
+                        <input type="text" name="lname" id="lname" required />
+                    </div>
+                </section>
+                <section id="username" class="row">
+                    <label for="uname">Username<span>*</span></label><br />
+                    <input type="text" name="uname" id="uname" required />
+                    <section id="details" class="row">
+                        <div class="col">
+                            <label>Sex</label><br />
+                            <label for="male">Male</label>
+                            <input type="radio" name="sex" id="male" value="male" required checked />
+
+                            <label for="male">Female</label>
+                            <input type="radio" name="sex" id="female" value="female" />
+                        </div>
+                        <div class="col">
+                            <label for="Date of Birth">Date of Birth<span>*</span></label><br />
+                            <input type="date" name="dob" id="dob" required />
+                        </div>
+                    </section>
+                    <section id="contactnum" class="row">
+                        <label>Contact Number<span>*</span></label><br />
+                        <div>
+                            <select name="countrycode" id="countrycode" required>
+                                <option name="AU" value="AU">Australia (+61)</option>
+                                <option name="IN" value="IN" selected>India (+91)</option>
+                                <option name="UA" value="UA">Ukraine (+380)</option>
+                            </select>
+                        </div>
+                      <br /><br/>
+                      <div>
+                        <input type="number" name="phonenum" id="phonenum" required />
+                    </div>
+                    </section>
+            </fieldset>
+            <fieldset class="fields">
+                <legend>Marks in Percentage<span>*</span></legend>
+                <div class="row">
+                    <label for="subject1" id="s1">Mathematics</label><br />
+                    <input type="number" name="subject1" id="subject1" max=100 min=0 required />
+                </div>
+                <div class="row">
+                    <label for="subject2">Physics</label><br />
+                    <input type="number" name="subject2" id="subject2" max=100 min=0 required />
+                </div>
+                <div class="row">
+                    <label for="subject3">Chemistry</label><br />
+                    <input type="number" name="subject3" id="subject3" max=100 min=0 required />
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="col">
+                    <input type="reset" name="reset" value="Reset" />
+                </div>
+                <div class="col">
+                    <input type="submit" name="submit" value="Submit" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function subjectChange(obj) {
+            if (obj.value=='medical') {
+                console.log('Change');
+                document.getElementById('s1').innerHTML = 'Biology';
+            } else {
+                document.getElementById('s1').innerHTML = 'Mathematics';
+            }
+
+        }
+    </script>
+</body>
+
+</html>
